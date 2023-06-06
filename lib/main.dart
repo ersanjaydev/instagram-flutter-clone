@@ -15,14 +15,25 @@ void main() async {
 
   // initialise app based on platform- web or mobile
   if (kIsWeb) {
+    // await Firebase.initializeApp(
+    //   options: const FirebaseOptions(
+    //     apiKey: "AIzaSyCZ-xrXqD5D19Snauto-Fx_nLD7PLrBXGM",
+    //     appId: "1:585119731880:web:eca6e4b3c42a755cee329d",
+    //     messagingSenderId: "585119731880",
+    //     projectId: "instagram-clone-4cea4",
+    //     storageBucket: 'instagram-clone-4cea4.appspot.com'
+    //   ),
+    // );
     await Firebase.initializeApp(
-      options: const FirebaseOptions(
-        apiKey: "AIzaSyCZ-xrXqD5D19Snauto-Fx_nLD7PLrBXGM",
-        appId: "1:585119731880:web:eca6e4b3c42a755cee329d",
-        messagingSenderId: "585119731880",
-        projectId: "instagram-clone-4cea4",
-        storageBucket: 'instagram-clone-4cea4.appspot.com'
-      ),
+        options: const FirebaseOptions(
+          apiKey: 'AIzaSyDY-js78jsQNj86f4Wdt1E6sL0MncfGt_A',
+          appId: '1:258990320163:web:629317cbbd6a20f2e81f96',
+          messagingSenderId: '258990320163',
+          projectId: 'instaclone-9af77',
+          authDomain: 'instaclone-9af77.firebaseapp.com',
+          storageBucket: 'instaclone-9af77.appspot.com',
+          measurementId: 'G-LVS1C5MN6P',
+        ),
     );
   } else {
     await Firebase.initializeApp();
@@ -45,6 +56,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: mobileBackgroundColor,
         ),
+
         home: StreamBuilder(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
